@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Karta kontaktu</title>
+	<!-- normalize.css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="contact-nav">
+				<div class="col-md-12 col-sm-12">
+					<!--Nawigacja karty  -->
+					<ol class="breadcrumb">
+						<li>
+							<a href="#">Klienci
+							</a>
+						</li>
+						<li>
+							<a href="#">Lista klientów
+							</a>
+						</li>
+						<li class="active">Edycja użytkownika
+						</li>
+					</ol>
+					<!--Nazwa kontaktu, która będzie zcztywała dane z pola Imię i Naziwko / Firma - będzie zmiana ikony ze względu na osobę/firmę -->
+					<div class="contact-name">
+						<div class="background-color-of-icon">
+							<i id="icon-private-client" class="fa fa-user fa-2x" aria-hidden="true"></i>
+							<i id="icon-company-client" class="fa fa-industry fa-2x" aria-hidden="true"></i>
+						</div>
+						<div class="client-name">
+							<h1>Jan Kowalski</h1>
+						</div>
+						<button type="button" class="btn btn-danger">USUŃ UŻYTKOWNIKA</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Pierwsza kolumna z danymi-podział na nieregularne kolumny i wiersze z edycją danych i grupami rabatowymi  -->
+		<div class="first-block">
+			<div class="row">
+				<div class="col-md-5 col-sm-12">
+					<div class="basic-info-block">
+						<div class="block-panel">
+							<div class="block-panel-title">
+								<!--PODSTAWOWE INFORMAJCE  -->
+								<h3>Informacje</h3>
+							</div>
+							<div class="block-panel-body">
+								<div class="basic-info-row">
+									<div class="col-1-2">
+										<p>ID</p>
+									</div>
+									<div class="col-1-2">
+										<div class="bold-text">
+											<p>3489</p>
+										</div>
+									</div>
+								</div>
+								<div class="basic-info-row">
+									<div class="col-1-2">
+										<p>Data rejestracji</p>
+									</div>
+									<div class="col-1-2">
+										<div class="bold-text">
+											<p>2018-03-27 11:41:40</p>
+										</div>
+									</div>
+								</div>
+								<div class="basic-info-row">
+									<div class="col-1-2">
+										<p>Ostatnie logowanie</p>
+									</div>
+									<div class="col-1-2">
+										<div class="bold-text">
+											<p>2018-03-27 11:41:40</p>
+										</div>
+									</div>
+								</div>
+								<div class="basic-info-row">
+									<div class="col-1-2">
+										<p>Dodatkowy adres e-mail</p>
+									</div>
+									<div class="col-1-2">
+										<a href="./subpages/add_e_mail_adress.html">
+											<button type="button" class="btn btn-default btn-circle" aria-label="glyphicon glyphicon-edit">
+												<span class="glyphicon glyphicon-edit" aria-hidden="true">
+												</span>
+											</button>
+										</a>
+									</div>
+								</div>
+								<div class="basic-info-row">
+									<div class="col-1-2">
+										<p>Dodatkowy telefon kontaktowy</p>
+									</div>
+									<div class="col-1-2">
+										<a href="./subpages/add_telephone_number.html">
+											<button type="button" class="btn btn-default btn-circle" aria-label="glyphicon glyphicon-edit">
+												<span class="glyphicon glyphicon-edit" aria-hidden="true">
+												</span>
+											</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sale-group-block">
+						<div class="block-panel">
+							<div class="block-panel-title">
+								<!--GRUPY RABATOWE  -->
+								<h3>Grupa rabatowa</h3>
+							</div>
+							<div class="sale-form">
+								<select class="form-control">
+										<option>25%</option>
+										<option>20%</option>
+										<option>15%</option>
+										<option>25% + 0% rura</option>
+										<option>MAX - 10%BM</option>
+										<option>MAX + 0% rura</option>
+										<option>Expo</option>
+										<option>10% wszystko/hurtownia</option>
+										<option>15% wszystko/hurtownia</option>
+										<option>20% wszystko/hurtownia</option>
+									</select>
+							</div>
+						</div>
+					</div>
+					<div class="client-labels-block">
+						<div class="block-panel">
+							<div class="block-panel-title">
+								<!--NADANIE ETYKIET DLA KLIENTA  -->
+								<h3>Etykiety</h3>
+							</div>
+							<div class="block-panel-body">
+								<div class="labels-row">
+									<div class="col-1-3">
+										<label>
+											<div class="label-checkbox">
+												<input id="premium-badge" class="checkbox" type="checkbox">
+											</div>
+											<div class="label-name">
+												<span class="label label-warning">PREMIUM</span>
+											</div>
+										</label>
+									</div>
+									<div class="col-1-3">
+										<span id="premium-visibility" class="eye-icon-container disabled-icon">
+  										<i id="premium-badge-visible" class="fa fa-eye"></i>
+											<i id="premium-badge-invisible" class="fa fa-eye-slash hidden" aria-hidden="true"></i>
+               			</span>
+									</div>
+								</div>
+								<div class="labels-row">
+									<div class="col-1-3">
+										<label>
+											<div class="label-checkbox">
+												<input id="risky-badge" class="checkbox" type="checkbox">
+											</div>
+											<div class="label-name">
+												<span class="label label-danger">RYZYKOWNY</span>
+											</div>
+										</label>
+									</div>
+									<div class="col-1-3">
+										<span id="risky-visibility" class="eye-icon-container disabled-icon">
+  										<i id="risky-badge-visible" class="fa fa-eye"></i>
+											<i id="risky-badge-invisible" class="fa fa-eye-slash hidden" aria-hidden="true"></i>
+               			</span>
+									</div>
+								</div>
+								<div class="labels-row">
+									<div class="col-1-3">
+										<label>
+											<div class="label-checkbox">
+												<input id="fitter-badge" class="checkbox" type="checkbox">
+											</div>
+											<div class="label-name">
+												<span class="label label-primary">INSTALATOR</span>
+											</div>
+										</label>
+									</div>
+									<div class="col-1-3">
+										<span id="fitter-visibility" class="eye-icon-container disabled-icon">
+  										<i id="fitter-badge-visible" class="fa fa-eye"></i>
+											<i id="fitter-badge-invisible" class="fa fa-eye-slash hidden" aria-hidden="true"></i>
+               			</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-12">
+					<div class="edit-basic-info-block">
+						<div class="block-panel">
+							<div class="block-panel-title">
+								<!--EDYCJA GŁÓWNYCH DANYCH KLIENTA FORMULARZ -->
+								<h3>Edycja danych</h3>
+							</div>
+							<div class="block-panel-body">
+								<form>
+									<div class="edit-info-form">
+										<!-- Podział na dwie kolumny danych -->
+										<div class="col-1-2">
+											<div class="form-group">
+												<label>Typ klienta</label>
+												<select class="form-control" name="typ-klienta" id="type-of-client">
+													<option value="private">Osoba prywanta</option>
+													<option value="company">Firma</option>
+											 </select>
+											</div>
+										</div>
+										<div class="col-1-2">
+											<div class="form-group">
+												<label>Status klienta</label>
+													<select class="form-control" name="typ-klienta">
+														<option>Nowy</option>
+														<option>Potwierdzony</option>
+														<option>Zbanowany</option>
+													</select>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>Adres e-mail</label>
+										<input type="email" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Hasło</label>
+										<input type="password" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Nazwa firmy</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>NIP</label>
+										<input type="text" class="form-control">
+									</div>
+									<div class="edit-info-form">
+										<div class="col-1-2">
+											<div class="form-group">
+												<label>Imię</label>
+												<input type="text" class="form-control">
+											</div>
+										</div>
+										<div class="col-1-2">
+											<div class="form-group">
+												<label>Nazwisko</label>
+												<input type="text" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label>Telefon kontaktowy</label>
+										<input type="tel" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Strona internetowa</label>
+										<input type="url" class="form-control">
+									</div>
+									<div class="btn-position">
+										<button type="submit" class="btn btn-primary confirm-information">AKTUALIZUJ DANE
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--SEKCJA KOMENTARZY UŻYTKOWNIKA  -->
+		<div class="comment-block">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block-panel">
+						<div class="block-panel-title">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 btn-position">
+									<h3>Komentarze</h3>
+									<a href="./subpages/add_comment.html">
+										<button id="add-comment-btn" type="button" class="btn btn-primary">DODAJ KOMENTARZ
+										</button>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="block-panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th class="table-author">Autor</th>
+												<th>Dodano</th>
+												<th>Treść</th>
+												<th>Akcja</th>
+											</tr>
+										</thead>
+										<tbody id="comment-table">
+											<tr>
+												<td>Anna Kowalska</td>
+												<td>11-06-2016</td>
+												<td>Kontakt ws. skrzynek, zamówień tel.669438669 (sklep)</td>
+												<td>
+													<button type="button" class="btn btn-danger btn-circle" aria-label="">
+														<span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td>Justyna Nowak</td>
+												<td>11-05-2017</td>
+												<td>Bardzo proszę by faktury były wysyłane również na adres e-mail adrian@ziterm.pl Dostawa zawsze do Skoczowa (chyba, że klient uprzedzi nas mailowo, że ma być inaczej).</td>
+												<td>
+													<button type="button" class="btn btn-danger btn-circle" aria-label="Left Align">
+														<span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true">
+														</span>
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td>Mirosław Jóźnik</td>
+												<td>10-04-2018</td>
+												<td>Bardzo proszę by faktury przesyłać również na: adrian@ziterm.pl oraz pawel@ziterm.pl</td>
+												<td>
+													<button type="button" class="btn btn-danger btn-circle" aria-label="Left Align">
+  													<span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true">
+  													</span>
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Sekcja dodatkowych adresów klienta  -->
+		<div class="adress-block">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block-panel">
+						<div class="block-panel-title">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 btn-position">
+									<h3>Adresy</h3>
+									<a href="./subpages/add_adress.html">
+										<button type="button" class="btn btn-primary">DODAJ ADRES
+										</button>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="block-panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th class="uk-table-shrink">ID</th>
+												<th class="uk-table-shrink">Alias</th>
+												<th class="uk-table-shrink">Telefon</th>
+												<th class="uk-table-shrink">Ulica</th>
+												<th class="uk-table-shrink">Miasto</th>
+												<th class="uk-table-shrink">Kod pocztowy</th>
+												<th class="uk-table-shrink">Domyślny dostawy</th>
+												<th class="uk-table-shrink">Domyślny faktury</th>
+												<th class="uk-table-shrink"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>345</td>
+												<td>
+													<div id="adress-alias">Faktura</div>
+												</td>
+												<td id="adress-telephone">663783830</td>
+												<td id="ardess-street">Szpotawicka 11</td>
+												<td id="adress-city">Górki Wielkie</td>
+												<td id="adress-post">43-436</td>
+												<td>
+													<div id="default-delivery">
+														<button type="button" class="btn btn-default btn-green btn-circle white-icon hidden" aria-label="glyphicon glyphicon-ok" id="default-delivery-check">
+															<span class="glyphicon glyphicon-ok" aria-hidden="true">
+															</span>
+														</button>
+														<button type="button" class="btn btn-default btn-red btn-circle white-icon" aria-label="glyphicon glyphicon-remove" id="default-delivery-close">
+															<span class="glyphicon glyphicon-remove" aria-hidden="true">
+															</span>
+														</button>
+													</div>
+												</td>
+												<td>
+													<div id="default-invoice">
+														<button type="button" class="btn btn-default btn-green btn-circle white-icon" aria-label="glyphicon glyphicon-ok" id="default-invoice-check">
+															<span class="glyphicon glyphicon-ok" aria-hidden="true">
+															</span>
+														</button>
+														<button type="button" class="btn btn-default btn-red btn-circle white-icon hidden" aria-label="glyphicon glyphicon-remove hidden" id="default-invoice-close">
+															<span class="glyphicon glyphicon-remove" aria-hidden="true">
+															</span>
+														</button>
+													</div>
+												</td>
+												<td>
+													<button type="button" class="btn btn-default">EDYTUJ
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Sekcja dodatkowych adresów klienta  -->
+		<div class="history-block">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block-panel">
+						<div class="block-panel-title">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 btn-position">
+									<h3>Historia zamówień</h3>
+								</div>
+							</div>
+						</div>
+						<div class="block-panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th class="uk-table-shrink">Nr zamówienia</th>
+												<th class="uk-table-shrink">Wartość zamówienia netto
+												</th>
+												<th class="uk-table-shrink">Wartość zamówienia brutto
+												</th>
+												<th class="uk-table-shrink">Data utworzenia</th>
+												<th class="uk-table-shrink">Data edycji</th>
+												<th class="uk-table-shrink">Status</th>
+												<th class="uk-table-shrink">Faktura</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>16064</td>
+												<td>5 049,67 zł</td>
+												<td>6 211,09 zł</td>
+												<td>20-04-2013</td>
+												<td>08-01-2018</td>
+												<td>
+													<span class="uk-badge">Zapłacone</span>
+												</td>
+												<td>
+													<button type="button" class="btn btn-default btn-circle" aria-label="glyphicon glyphicon-edit">
+														<span class="glyphicon glyphicon-edit" aria-hidden="true">
+														</span>
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<nav aria-label="Page navigation">
+										<ul class="pagination">
+											<li>
+												<a href="#" aria-label="Previous">
+      									  <span aria-hidden="true">&laquo;</span>
+      									</a>
+											</li>
+											<li>
+												<a href="#">1
+												</a>
+											</li>
+											<li>
+												<a href="#">2
+												</a>
+											</li>
+											<li>
+												<a href="#">3
+												</a>
+											</li>
+											<li>
+												<a href="#">4
+												</a>
+											</li>
+											<li>
+												<a href="#">5
+												</a>
+											</li>
+											<li>
+												<a href="#" aria-label="Next">
+        									<span aria-hidden="true">&raquo;</span>
+      									</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="scripts/main.bundle.js"></script>
+	<script src="https://use.fontawesome.com/7caf6cfffb.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+/*-------------------------------------
+  Example stylesheet
+-------------------------------------*/
+.contact-nav {
+	display: block;
+	flex-wrap: nowrap;
+	height: 120px;
+	background-color: white;
+	box-shadow: 0 10px 15px rgba(0,0,0,.08);
+
+	.contact-name {
+		padding: 0 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.client-name {
+			flex: 1;
+			padding-left: 10px;
+		}
+	}
+}
