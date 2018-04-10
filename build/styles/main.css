@@ -257,7 +257,9 @@ td {
 
 @media only screen and (min-width: 1300px) {
   .block-panel {
-    margin: 30px 200px; }
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px; }
   .contact-name {
     margin-left: 160px;
     margin-right: 160px; }

@@ -265,8 +265,11 @@ td {
 }
 // Zmiana marginesów dla większych rozdzielczości ekranu
 @media only screen and (min-width: 1300px) {
+
   .block-panel {
-    margin: 30px 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
   }
 
   .contact-name {
